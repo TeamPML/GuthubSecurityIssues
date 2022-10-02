@@ -10,10 +10,10 @@ do
 		-d state='all' \
 		-d per_page=100 \
 		-d page=${page} \
-		https://api.github.com/repos/matomo-org/matomo/issues)
+		https://api.github.com/repos/$1/issues)
 
 	if [[ ${#res} -gt 4 ]]; then
-		echo ${res} > matomo-org/matomo/matomo${page}.json
+		echo ${res} > $1/${page}.json
 		(( page++ ))
 	else
 		break
