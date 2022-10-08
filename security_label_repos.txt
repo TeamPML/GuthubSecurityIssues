@@ -1,0 +1,11 @@
+matomo-org/matomo
+rubinius/rubinius
+ruby-git/ruby-git
+spree/spree
+thoughtbot/paperclip
+rails/rails
+cucumber/cucumber-ruby
+cucumber/cucumber-ruby
+sparklemotion/mechanize
+vubiostat/r-yaml
+activemerchant/active_merchant
