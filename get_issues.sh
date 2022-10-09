@@ -13,7 +13,7 @@ do
 		https://api.github.com/repos/$1/issues)
 
 	if [[ ${#res} -gt 4 ]]; then
-		echo ${res} > $1/${page}.json
+		echo ${res} > data/$1/${page}.json
 		(( page++ ))
 	else
 		break
