@@ -4,6 +4,11 @@ from secrets import MY_TOKEN
 from datetime import datetime
 import pause
 
+"""
+search repositories in github
+that have * at least 1 * issue with security label
+"""
+
 
 def is_s_label(label_name):
     return 'security' in label_name.lower()
@@ -19,10 +24,13 @@ for repo in repos:
         pause.until(reset_time)
 
     try:
+        sec_count = 0
         for label in repo.get_labels():
             if is_s_label(label.name):
-                with open("selected1.txt", 'a') as f:
-                    n = f.write(f'{repo.full_name}\n')
+                sec_count += repo.get_issues(labels=[label]).totalCount
+        if sec_count > 0:
+            with open("selected1.txt", 'a') as f:
+                n = f.write(f'{repo.full_name}\n')
         print(f'left: {g.rate_limiting[0]}      checked: {repo.id} — {repo.full_name}')
 
     except Exception as e:
