@@ -1,11 +1,9 @@
 import json
 import os
 
-repo_addr = 'matomo-org/matomo'
+from utils import prepare_to_csv
 
-
-def prepare_to_csv(text):
-    return '"' + text.replace('"', '""') + '"' if text else ""
+repo_addr = '../data/matomo-org/matomo'
 
 
 with open(f'{repo_addr}.csv', 'w',  encoding='utf-8') as f:

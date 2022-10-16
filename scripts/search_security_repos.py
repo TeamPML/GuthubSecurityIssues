@@ -9,13 +9,15 @@ search repositories in github
 that have * at least 1 * issue with security label
 """
 
+filename = "../data/security_issues_src.txt"
+
 
 def is_s_label(label_name):
     return 'security' in label_name.lower()
 
 
 g = github.Github(login_or_token=MY_TOKEN, per_page=100)
-repos = g.get_repos(since=350370, visibility='public')
+repos = g.get_repos(since=1082427, visibility='public')
 
 for repo in repos:
     if g.rate_limiting[0] < 10:
@@ -29,7 +31,7 @@ for repo in repos:
             if is_s_label(label.name):
                 sec_count += repo.get_issues(labels=[label]).totalCount
         if sec_count > 0:
-            with open("selected1.txt", 'a') as f:
+            with open(filename, 'a') as f:
                 n = f.write(f'{repo.full_name}\n')
         print(f'left: {g.rate_limiting[0]}      checked: {repo.id} — {repo.full_name}')
 
