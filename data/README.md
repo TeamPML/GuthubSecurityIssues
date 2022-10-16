@@ -1,4 +1,4 @@
-The structure of `all_issues.csv` is the following:
+The structure of `security_issues.csv` and `non-security_issues.csv` is same; both files the following fields:
 
 1. **repository** - full name of repository on github, in the format {owner-name/repo-name};
 2. **number** - number of the issue; 
