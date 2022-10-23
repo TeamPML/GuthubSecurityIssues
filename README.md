@@ -15,3 +15,9 @@ We need to collect a new dataset with github issues, making sure there are issue
 ### Expectations of the Model
 
 We expect the model to predict whether requirements (sentences in natural English that bear meaning of a software requirement) are concerned with sequrity.
+
+
+----
+
+Assumption:
+security related issues bear information on requirements for the software
