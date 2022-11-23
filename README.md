@@ -1,8 +1,8 @@
 # GuthubSecurityIssues
-For now, this is a set of scripts and intermediate results that would hopefully later result in the dataset of security issues from Github.
+The dataset of security and non-security issues from Github open source repositories. Classification model oof github issues, whether they concern security or not.
 
 
-## [New] Brief Project Proposal
+## Project Proposal
 
 ### Project Description
 
@@ -19,5 +19,5 @@ We expect the model to predict whether requirements (sentences in natural Englis
 
 ----
 
-Assumption:
+If the model is used on requirements, we assume:
 security related issues bear information on requirements for the software
